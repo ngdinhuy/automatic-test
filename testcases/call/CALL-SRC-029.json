@@ -1,0 +1,56 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-029",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 29,
+      "description_cell": "B29",
+      "expected_cell": "C29"
+    },
+    "description": "Kill app khi cuộc gọi đang diễn ra",
+    "expected": "Androi: Cuộc gọi vẫn diễn ra, hai bên vẫn nghe gọi bình thường\nIOS: kết thúc cuộc gọi,  -Hiển thị trạng thái call ended đúng\n -Thời gian cuộc gọi được ghi nhận chính xác\n -Không còn luồng audio sau khi kết thúc\n -Quay lại đúng màn hình trước khi gọi\n -Không crash khi kết thúc cuộc gọi",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-029-RECENTS_DISMISS"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-029-RECENTS_DISMISS",
+      "name": "Bỏ app khỏi recents khi đang gọi Android",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-029"
+      ],
+      "note": "Kiểm tra tín hiệu thoại của Android theo UID trên A/B, chưa đo nội dung, chất lượng âm hoặc độ trễ.",
+      "params": {
+        "flow": "call",
+        "variant": "recents"
+      },
+      "requirements": [
+        "probe:audio_duplex"
+      ],
+      "obligations": [
+        "recents_dismissed",
+        "call_survives",
+        "call_audio_signals"
+      ],
+      "coverage_level": "partial"
+    }
+  ]
+}

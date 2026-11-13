@@ -1,0 +1,55 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-009",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 9,
+      "description_cell": "A9",
+      "expected_cell": "B9"
+    },
+    "description": "Reply tin nhắn có mention",
+    "expected": "Reply tin nhắn thành công, hiển thị đúng tên người được mention ( lấy ưu tiên theo danh bạ --> nickname --> SDT)",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-009-REPLY"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-009-REPLY",
+      "name": "Reply tin có mention",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-009"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: group:primary, lab:member_names",
+      "params": {
+        "flow": "reply_mention"
+      },
+      "requirements": [
+        "group:primary",
+        "lab:member_names"
+      ],
+      "obligations": [
+        "quoted_mention",
+        "reply_received"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

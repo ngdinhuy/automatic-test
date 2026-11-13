@@ -1,0 +1,26 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-038",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 38,
+      "description_cell": "B38",
+      "expected_cell": "C38"
+    },
+    "description": "A và B đang có cuộc gọi tammi, có cuộc gọi viễn thôngC đến cho A, A nghe máy C một lúc xong tắt, quay lại cuộc gọi tammi với B",
+    "expected": "A và B nghe gọi bình thường tiếp",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "excluded",
+    "normalization_status": "pending_functional_split",
+    "automation_mode": "unclassified",
+    "platform_scope": "excluded",
+    "exclusion_reason": "telecom_out_of_scope",
+    "first_phase_defer_reason": null,
+    "execution_status": "excluded",
+    "coverage_note": "Functional assertions only; preserve raw source and defer visual/physical assertions. No product test has run."
+  },
+  "platform": "Android–Android",
+  "variants": []
+}

@@ -1,0 +1,82 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-006",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 6,
+      "description_cell": "B6",
+      "expected_cell": "C6"
+    },
+    "description": "check gọi đến khi máy người nhận để ring mode",
+    "expected": "Đổ chuông báo cuộc gọi đến",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-006-NORMAL"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-006-NORMAL",
+      "name": "Cuộc gọi đến ở chế độ normal",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-006"
+      ],
+      "note": "Kiểm tra màn hình gọi đến và player chuông mới theo UID trên Android.",
+      "params": {
+        "flow": "call",
+        "variant": "ringer_system",
+        "ringer": "normal"
+      },
+      "requirements": [
+        "probe:android_signals"
+      ],
+      "obligations": [
+        "incoming",
+        "incoming_ringtone_signal"
+      ],
+      "coverage_level": "partial"
+    },
+    {
+      "id": "CALL-006-ANDROID_SIGNALS",
+      "name": "Đo tín hiệu Android khi B normal",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-006"
+      ],
+      "note": "Đo dispatch rung/phát âm thanh theo UID trong 5 giây; chưa nghiệm thu âm thanh/rung vật lý hoặc chất lượng nghe.",
+      "params": {
+        "flow": "call",
+        "variant": "ringer_system",
+        "ringer": "normal"
+      },
+      "requirements": [
+        "probe:android_signals"
+      ],
+      "obligations": [
+        "incoming",
+        "system_alert_policy"
+      ],
+      "coverage_level": "partial"
+    }
+  ]
+}

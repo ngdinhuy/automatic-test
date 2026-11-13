@@ -1,0 +1,89 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-035",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 35,
+      "description_cell": "A35",
+      "expected_cell": "B35"
+    },
+    "description": "Tạo nhóm, chia sẻ QR nhóm, join nhóm bằng linh/ quét QR, rời nhóm",
+    "expected": "thành công",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-035-LINK",
+      "CHAT-035-QR"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-035-LINK",
+      "name": "Tạo nhóm, chia sẻ QR/link, join bằng link, rời",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-035"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "group_lifecycle",
+        "join": "link"
+      },
+      "requirements": [
+        "lab:member_names",
+        "account:C",
+        "member_name:C"
+      ],
+      "obligations": [
+        "group_created",
+        "invite_shared",
+        "joined_membership",
+        "left_membership"
+      ],
+      "coverage_level": "functional"
+    },
+    {
+      "id": "CHAT-035-QR",
+      "name": "Tạo nhóm, chia sẻ QR/link, join bằng qr, rời",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-035"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "group_lifecycle",
+        "join": "qr"
+      },
+      "requirements": [
+        "lab:member_names",
+        "account:C",
+        "member_name:C"
+      ],
+      "obligations": [
+        "group_created",
+        "invite_shared",
+        "joined_membership",
+        "left_membership"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

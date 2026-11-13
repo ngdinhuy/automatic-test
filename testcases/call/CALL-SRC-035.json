@@ -1,0 +1,62 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-035",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 35,
+      "description_cell": "B35",
+      "expected_cell": "C35"
+    },
+    "description": "Tạo meet, join meet , rời nhóm, end meet, share màn hình",
+    "expected": "Tạo meet, join meet , rời nhóm, end meet, share màn hình thành công trên cả mobile và web. Cam , mic tắt bật hiện thị đúng trạng thái và show icon đúng trên từng khung hình của member. \n View danh sách member hiển thị tên đúng theo rule: danh bạ --> nickname --> số điện thoại",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-035-MEETING"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-035-MEETING",
+      "name": "Meet: tạo/join/rời/end/share, cam/mic, member mobile/web",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-035"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: probe:meeting_web, probe:meeting_media",
+      "params": {
+        "flow": "meeting"
+      },
+      "requirements": [
+        "probe:meeting_web",
+        "probe:meeting_media",
+        "lab:member_names"
+      ],
+      "obligations": [
+        "meeting_created",
+        "joined",
+        "member_identity",
+        "camera_mic_state",
+        "screen_shared",
+        "left",
+        "ended",
+        "web_participant"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

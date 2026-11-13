@@ -1,0 +1,54 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-032",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 32,
+      "description_cell": "A32",
+      "expected_cell": "B32"
+    },
+    "description": "Check ricktexxt, markdown ",
+    "expected": "kết quả giống như app telegram",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": "ui_visual_only",
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-032-RICH_TEXT"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-032-RICH_TEXT",
+      "name": "Rich text/Markdown giữ nội dung và mở link",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-032"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: fixture:rich_text",
+      "params": {
+        "flow": "rich_text"
+      },
+      "requirements": [
+        "fixture:rich_text"
+      ],
+      "obligations": [
+        "semantic_content",
+        "link_target"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

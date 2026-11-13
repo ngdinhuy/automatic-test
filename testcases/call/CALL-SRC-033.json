@@ -1,0 +1,26 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-033",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 33,
+      "description_cell": "B33",
+      "expected_cell": "C33"
+    },
+    "description": "Click gọi lại từ log cuộc gọi ở màn thông báo trong trung tâm thông báo",
+    "expected": "make cuộc gọi thành công, nghe gọi bình thường",
+    "source_qualifier": "IOS",
+    "spec_issues": [],
+    "implementation_status": "excluded",
+    "normalization_status": "pending_functional_split",
+    "automation_mode": "unclassified",
+    "platform_scope": "excluded",
+    "exclusion_reason": "ios_only",
+    "first_phase_defer_reason": null,
+    "execution_status": "excluded",
+    "coverage_note": "Functional assertions only; preserve raw source and defer visual/physical assertions. No product test has run."
+  },
+  "platform": "Android–Android",
+  "variants": []
+}

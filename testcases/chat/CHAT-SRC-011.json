@@ -1,0 +1,52 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-011",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 11,
+      "description_cell": "A11",
+      "expected_cell": "B11"
+    },
+    "description": "Gửi tin nhắn khi mất mạng",
+    "expected": "báo lỗi không gửi được, click retry lại khi có mạng OK",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-011-FUNCTIONAL"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-011-FUNCTIONAL",
+      "name": "Gửi offline, báo lỗi rồi retry khi online",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-011"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "offline_send"
+      },
+      "requirements": [],
+      "obligations": [
+        "offline_error",
+        "retry_delivered_once"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

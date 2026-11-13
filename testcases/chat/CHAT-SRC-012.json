@@ -1,0 +1,52 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-012",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 12,
+      "description_cell": "A12",
+      "expected_cell": "B12"
+    },
+    "description": "Sửa tin nhắn trên hội thoại",
+    "expected": "sửa tin nhắn thành công, tin nhắn mới được cập nhật lại ngay",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-012-FUNCTIONAL"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-012-FUNCTIONAL",
+      "name": "Sửa tin test và đồng bộ hai máy",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-012"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "edit"
+      },
+      "requirements": [],
+      "obligations": [
+        "edited_both_sides",
+        "old_payload_absent"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

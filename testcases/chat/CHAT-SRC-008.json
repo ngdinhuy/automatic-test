@@ -1,0 +1,83 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-008",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 8,
+      "description_cell": "A8",
+      "expected_cell": "B8"
+    },
+    "description": "gửi file video tệp dung lượng lớn ( sau khi nén > 1000Mb), ảnh >20Mb",
+    "expected": "Báo lỗi file vượt quá dung lượng",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-008-VIDEO_OVER_1000MB",
+      "CHAT-008-IMAGE_OVER_20MB"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-008-VIDEO_OVER_1000MB",
+      "name": "Từ chối vượt dung lượng: video_over_1000mb",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-008"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: fixture:video_over_1000mb",
+      "params": {
+        "flow": "media",
+        "media": "video_over_1000mb",
+        "reject": true
+      },
+      "requirements": [
+        "fixture:video_over_1000mb"
+      ],
+      "obligations": [
+        "size_limit_error",
+        "no_delivery"
+      ],
+      "coverage_level": "functional"
+    },
+    {
+      "id": "CHAT-008-IMAGE_OVER_20MB",
+      "name": "Từ chối vượt dung lượng: image_over_20mb",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-008"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: fixture:image_over_20mb",
+      "params": {
+        "flow": "media",
+        "media": "image_over_20mb",
+        "reject": true
+      },
+      "requirements": [
+        "fixture:image_over_20mb"
+      ],
+      "obligations": [
+        "size_limit_error",
+        "no_delivery"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

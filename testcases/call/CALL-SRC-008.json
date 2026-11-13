@@ -1,0 +1,56 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-008",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 8,
+      "description_cell": "B8",
+      "expected_cell": "C8"
+    },
+    "description": "Call audio 1-1 , call đi, call đến",
+    "expected": "phải có service thông báo ở trung tâm thông báo  \"Đang trong cuộc gọi..\"",
+    "source_qualifier": "Androi",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-008-SERVICE"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-008-SERVICE",
+      "name": "Gọi audio 1–1 và notification service",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-008"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "call",
+        "variant": "basic",
+        "kind": "audio",
+        "group": false
+      },
+      "requirements": [],
+      "obligations": [
+        "both_connected",
+        "ongoing_service_notification",
+        "both_ended"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

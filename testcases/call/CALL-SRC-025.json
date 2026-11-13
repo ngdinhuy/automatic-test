@@ -1,0 +1,87 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-025",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 25,
+      "description_cell": "B25",
+      "expected_cell": "C25"
+    },
+    "description": "A và B đang trong cuộc gọi, C gọi cho A/B\n - A/B từ chối C",
+    "expected": "A/B sẽ hiển thị màn hình cuộc gọi thứ ba đến để có thể từ chối C hoặc trả lời C\n trên màn hình của C hiển thị thông báo: \"Người nhận đã từ chối cuộc gọi\", và C bị kết thúc cuộc gọi",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": "requires_third_android_account_and_device",
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-025-THREE_DEVICES_A",
+      "CALL-025-THREE_DEVICES_B"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-025-THREE_DEVICES_A",
+      "name": "Ba máy: third_reject, C gọi A",
+      "roles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-025"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: lab:member_names",
+      "params": {
+        "flow": "third_call",
+        "variant": "third_reject",
+        "target": "A"
+      },
+      "requirements": [
+        "lab:member_names"
+      ],
+      "obligations": [
+        "third_call_policy",
+        "original_call_policy",
+        "new_call_policy"
+      ],
+      "coverage_level": "functional"
+    },
+    {
+      "id": "CALL-025-THREE_DEVICES_B",
+      "name": "Ba máy: third_reject, C gọi B",
+      "roles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-025"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: lab:member_names",
+      "params": {
+        "flow": "third_call",
+        "variant": "third_reject",
+        "target": "B"
+      },
+      "requirements": [
+        "lab:member_names"
+      ],
+      "obligations": [
+        "third_call_policy",
+        "original_call_policy",
+        "new_call_policy"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

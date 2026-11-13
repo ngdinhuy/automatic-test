@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+BUNDLE_BIN="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+TEST_ROOT="$(cd -- "$BUNDLE_BIN/../../.." && pwd)"
+exec "$TEST_ROOT/scripts/desktop.sh" "$@"

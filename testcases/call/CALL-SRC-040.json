@@ -1,0 +1,87 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-040",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 40,
+      "description_cell": "B40",
+      "expected_cell": "C40"
+    },
+    "description": "Thực hiện A gọi videocall cho B, tắt cam hoặc không tắt cam, để thời gian trên 15p ",
+    "expected": "màn hình cả hai không được tự động sleep",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-040-CAMERA_ON",
+      "CALL-040-CAMERA_OFF"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-040-CAMERA_ON",
+      "name": "Video >15 phút, camera off=False",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-040"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "long_call",
+        "meeting": false,
+        "camera_off": false,
+        "hold_seconds": 910
+      },
+      "requirements": [
+        "probe:camera_capture"
+      ],
+      "obligations": [
+        "connected_over_15_minutes",
+        "both_screens_awake",
+        "camera_state_confirmed"
+      ],
+      "coverage_level": "functional"
+    },
+    {
+      "id": "CALL-040-CAMERA_OFF",
+      "name": "Video >15 phút, camera off=True",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-040"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "long_call",
+        "meeting": false,
+        "camera_off": true,
+        "hold_seconds": 910
+      },
+      "requirements": [
+        "probe:camera_capture"
+      ],
+      "obligations": [
+        "connected_over_15_minutes",
+        "both_screens_awake",
+        "camera_state_confirmed"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

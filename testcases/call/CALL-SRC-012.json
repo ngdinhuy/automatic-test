@@ -1,0 +1,57 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-012",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 12,
+      "description_cell": "B12",
+      "expected_cell": "C12"
+    },
+    "description": "A call video cho B, B chưa nghe máy, A mở tab khác , sau đó B nghe máy",
+    "expected": null,
+    "source_qualifier": "Androi",
+    "spec_issues": [
+      "missing_expected"
+    ],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-012-CALLER_BACKGROUND"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-012-CALLER_BACKGROUND",
+      "name": "A gọi video, ra nền trước khi B nghe",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-012"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "call",
+        "variant": "caller_background",
+        "kind": "video"
+      },
+      "requirements": [],
+      "obligations": [
+        "background_before_answer",
+        "both_connected",
+        "ongoing_service_notification"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

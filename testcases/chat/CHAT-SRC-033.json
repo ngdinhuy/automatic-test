@@ -1,0 +1,87 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-033",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 33,
+      "description_cell": "A33",
+      "expected_cell": "B33"
+    },
+    "description": "Test thêm profile cá nhân , profile nhóm (tìm tin nhắn, ghim trò chuyện, tắt thông báo, ảnh...)",
+    "expected": null,
+    "source_qualifier": null,
+    "spec_issues": [
+      "missing_expected"
+    ],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-033-PEER",
+      "CHAT-033-GROUP"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-033-PEER",
+      "name": "Profile peer: tìm tin, ghim, mute, media",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-033"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "profile",
+        "context": "peer"
+      },
+      "requirements": [],
+      "obligations": [
+        "profile_identity",
+        "profile_search",
+        "pin_toggle",
+        "mute_toggle",
+        "media_access"
+      ],
+      "coverage_level": "functional"
+    },
+    {
+      "id": "CHAT-033-GROUP",
+      "name": "Profile group: tìm tin, ghim, mute, media",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-033"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: group:primary",
+      "params": {
+        "flow": "profile",
+        "context": "group"
+      },
+      "requirements": [
+        "group:primary"
+      ],
+      "obligations": [
+        "profile_identity",
+        "profile_search",
+        "pin_toggle",
+        "mute_toggle",
+        "media_access"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-013",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 13,
+      "description_cell": "B13",
+      "expected_cell": "C13"
+    },
+    "description": "A call audio cho B, B chưa nghe máy, A mở tab khác , sau đó B nghe máy",
+    "expected": "phải có service thông báo ở trung tâm thông báo  \"Đang trong cuộc gọi..\"",
+    "source_qualifier": "Androi",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-013-CALLER_BACKGROUND"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-013-CALLER_BACKGROUND",
+      "name": "A gọi audio, ra nền trước khi B nghe",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-013"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "call",
+        "variant": "caller_background",
+        "kind": "audio"
+      },
+      "requirements": [],
+      "obligations": [
+        "background_before_answer",
+        "both_connected",
+        "ongoing_service_notification"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

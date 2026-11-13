@@ -1,0 +1,119 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-007",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 7,
+      "description_cell": "A7",
+      "expected_cell": "B7"
+    },
+    "description": "gửi file tệp dung lượng lớn ( sau khi nén <100Mb), tiêu chuẩn, HD, ảnh gốc",
+    "expected": "xử lý nén file gửi thành công",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-007-STANDARD",
+      "CHAT-007-HD",
+      "CHAT-007-ORIGINAL"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-007-STANDARD",
+      "name": "Ảnh/tệp dưới 100 MB: standard",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-007"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: fixture:image_under_100mb",
+      "params": {
+        "flow": "media",
+        "media": "image_under_100mb",
+        "quality": "standard"
+      },
+      "requirements": [
+        "fixture:image_under_100mb",
+        "probe:media_integrity"
+      ],
+      "obligations": [
+        "sent_media",
+        "receiver_open",
+        "media_metadata",
+        "compression_size"
+      ],
+      "coverage_level": "functional"
+    },
+    {
+      "id": "CHAT-007-HD",
+      "name": "Ảnh/tệp dưới 100 MB: hd",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-007"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: fixture:image_under_100mb",
+      "params": {
+        "flow": "media",
+        "media": "image_under_100mb",
+        "quality": "hd"
+      },
+      "requirements": [
+        "fixture:image_under_100mb",
+        "probe:media_integrity"
+      ],
+      "obligations": [
+        "sent_media",
+        "receiver_open",
+        "media_metadata",
+        "compression_size"
+      ],
+      "coverage_level": "functional"
+    },
+    {
+      "id": "CHAT-007-ORIGINAL",
+      "name": "Ảnh/tệp dưới 100 MB: original",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-007"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: fixture:image_under_100mb",
+      "params": {
+        "flow": "media",
+        "media": "image_under_100mb",
+        "quality": "original"
+      },
+      "requirements": [
+        "fixture:image_under_100mb",
+        "probe:media_integrity"
+      ],
+      "obligations": [
+        "sent_media",
+        "receiver_open",
+        "media_metadata",
+        "compression_size"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

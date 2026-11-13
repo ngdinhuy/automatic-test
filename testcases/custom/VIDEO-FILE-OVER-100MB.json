@@ -1,0 +1,25 @@
+{
+  "id": "VIDEO-FILE-OVER-100MB",
+  "name": "Gửi video nguồn >100 MB, tải và giải mã đầy đủ ở B",
+  "roles": [
+    "A",
+    "B"
+  ],
+  "action": "suite",
+  "sources": [],
+  "note": "Case bổ sung theo yêu cầu người dùng; chọn video từ Gallery, không thay case quay camera hoặc video sau nén >1000 MB.",
+  "params": {
+    "flow": "media",
+    "media": "gallery_video"
+  },
+  "requirements": [
+    "fixture:gallery_video",
+    "probe:media_integrity"
+  ],
+  "obligations": [
+    "sent_media",
+    "receiver_open",
+    "media_metadata"
+  ],
+  "coverage_level": "functional"
+}

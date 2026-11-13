@@ -1,0 +1,53 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-032",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 32,
+      "description_cell": "B32",
+      "expected_cell": "C32"
+    },
+    "description": "click gọi lại từ bong bóng cuộc gọi nhỡ/ cuộc gọi thoại",
+    "expected": "make cuộc gọi thành công, nghe gọi bình thường",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-032-BUBBLE"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-032-BUBBLE",
+      "name": "Gọi lại từ bubble cuộc gọi nhỡ/thoại",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-032"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "call",
+        "variant": "bubble"
+      },
+      "requirements": [],
+      "obligations": [
+        "call_bubble",
+        "bubble_recall_connected"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

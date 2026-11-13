@@ -1,0 +1,101 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-036",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 36,
+      "description_cell": "B36",
+      "expected_cell": "C36"
+    },
+    "description": "IOS call cho Andr, andr từ chối và gọi lại ngay cho ios",
+    "expected": "cuộc gọi 1 kết thúc thành công, cuộc gọi 2 nghe gọi bình thường",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "execution_adaptation": {
+      "platform": "Android-Android",
+      "initial_caller_role": "A",
+      "initial_receiver_role": "B",
+      "description": "Android A gọi Android B; B từ chối rồi gọi lại ngay cho A; A nhận cuộc gọi mới.",
+      "steps": [
+        "A gọi B",
+        "B từ chối cuộc gọi đầu",
+        "B gọi lại ngay cho A, không chèn thời gian chờ cố định để né lỗi",
+        "A nhận cuộc gọi mới",
+        "Kết thúc cuộc gọi mới và kiểm tra trạng thái cuối trên cả hai máy"
+      ],
+      "functional_assertions": [
+        "Cuộc gọi đầu kết thúc trên cả hai máy",
+        "Cuộc gọi ngược chiều được thiết lập, đúng tài khoản gọi và nhận",
+        "Hai phía chuyển sang trạng thái active của cuộc gọi mới",
+        "Kết thúc cuộc gọi mới thành công trên cả hai máy"
+      ],
+      "deferred_assertions": [
+        "Chất lượng và âm thanh hai chiều cần phép đo hoặc xác nhận riêng"
+      ],
+      "implementation_status": "not_implemented"
+    },
+    "runner_case_ids": [
+      "CALL-RECALL-A"
+    ],
+    "last_validation_report": "reports/20261111-112308-593893/report.html",
+    "script_variants": [
+      "CALL-036-ANDROID_ANDROID"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-036-ANDROID_ANDROID",
+      "name": "A gọi: bên kia từ chối và gọi ngược",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-036"
+      ],
+      "note": "Kiểm tra tín hiệu thoại của Android theo UID trên A/B, chưa đo nội dung, chất lượng âm hoặc độ trễ.",
+      "params": {
+        "flow": "call",
+        "variant": "receiver_recall",
+        "caller": "A"
+      },
+      "requirements": [
+        "probe:audio_duplex"
+      ],
+      "obligations": [
+        "first_ended",
+        "reverse_connected",
+        "call_audio_signals"
+      ],
+      "coverage_level": "partial"
+    },
+    {
+      "id": "CALL-RECALL-A",
+      "name": "A gọi B, B từ chối rồi gọi lại A",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "recall_a",
+      "sources": [
+        "CALL-SRC-036"
+      ],
+      "note": "Cần locator call trong Thiết lập; kiểm tra lifecycle, chưa đo chất lượng âm thanh.",
+      "params": {},
+      "requirements": [],
+      "obligations": [],
+      "coverage_level": "partial"
+    }
+  ]
+}

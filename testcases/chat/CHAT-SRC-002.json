@@ -1,0 +1,52 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-002",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 2,
+      "description_cell": "A2",
+      "expected_cell": "B2"
+    },
+    "description": "vào app, vào hội thoại cho hệ thống load tin nhắn lên local, xong tắt mạng đi vào lại hội thoại vẫn phải còn tin nhắn cũ ",
+    "expected": "vào app, vào hội thoại cho hệ thống load tin nhắn lên local, xong tắt mạng đi vào lại hội thoại vẫn phải còn tin nhắn cũ ",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-002-CACHE"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-002-CACHE",
+      "name": "Tin đã tải còn đọc được khi offline",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-002"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "cache"
+      },
+      "requirements": [],
+      "obligations": [
+        "received_online",
+        "cached_offline"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

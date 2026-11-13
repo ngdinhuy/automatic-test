@@ -1,0 +1,56 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-003",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 3,
+      "description_cell": "B3",
+      "expected_cell": "C3"
+    },
+    "description": "Thực hiện cuộc gọi khi máy người nhận không có mạng ",
+    "expected": "Thông báo: Đang nối máy đến người nhận, chuông chờ kết nối",
+    "source_qualifier": "m",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-003-OFFLINE"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-003-OFFLINE",
+      "name": "B offline: A chờ nối máy",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-003"
+      ],
+      "note": "PASS tín hiệu ADB trước–trong–sau theo UID/player; không đo RMS/SNR hay chất lượng âm vật lý. Volume/route thiếu được ghi unavailable.",
+      "params": {
+        "flow": "call",
+        "variant": "offline"
+      },
+      "requirements": [
+        "probe:ringback"
+      ],
+      "obligations": [
+        "connecting_offline",
+        "ringback_signal_started",
+        "ringback_signal_stopped"
+      ],
+      "coverage_level": "partial"
+    }
+  ]
+}

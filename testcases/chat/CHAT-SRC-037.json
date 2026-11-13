@@ -1,0 +1,60 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-037",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 37,
+      "description_cell": "A37",
+      "expected_cell": "B37"
+    },
+    "description": "dùng thuê bao hết data vẫn call chat meet và click miniapp viettel++ vẫn vào được  ( số sim 0868701860)",
+    "expected": "dùng thuê bao hết data vẫn call chat meet và click miniapp viettel++ vẫn vào được ",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": "requires_external_app_or_special_sim",
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-037-ZERO_DATA"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-037-ZERO_DATA",
+      "name": "SIM hết data: Chat, Call, Meet, Viettel++",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-037"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: probe:zero_data_sim, lab:zero_data_sim, group:primary, probe:meeting_media",
+      "params": {
+        "flow": "zero_data"
+      },
+      "requirements": [
+        "probe:zero_data_sim",
+        "lab:zero_data_sim",
+        "group:primary",
+        "probe:meeting_media"
+      ],
+      "obligations": [
+        "sim_no_quota",
+        "chat_delivered",
+        "call_connected",
+        "meeting_connected",
+        "miniapp_loaded"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

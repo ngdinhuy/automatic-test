@@ -1,0 +1,60 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-028",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 28,
+      "description_cell": "B28",
+      "expected_cell": "C28"
+    },
+    "description": "Đang trong cuộc gọi thì một bên mất mạng",
+    "expected": "trên máy người còn lại hiển thị thông báo \" Kết nối mạng của người nhận không ổn định\" hiển thị vòng tròn load 30s không kết nối lại được thì kết thúc cuộc gọi\n -Hiển thị trạng thái call ended đúng\n -Thời gian cuộc gọi được ghi nhận chính xác\n -Không còn luồng audio sau khi kết thúc\n -Quay lại đúng màn hình trước khi gọi\n -Không crash khi kết thúc cuộc gọi",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-028-NETWORK_LOSS"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-028-NETWORK_LOSS",
+      "name": "Mất mạng đang gọi, timeout 30s và cleanup",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-028"
+      ],
+      "note": "Kiểm tra tín hiệu thoại của Android theo UID trên A/B, chưa đo nội dung, chất lượng âm hoặc độ trễ.",
+      "params": {
+        "flow": "call",
+        "variant": "network_loss"
+      },
+      "requirements": [
+        "probe:audio_duplex",
+        "locator:call_bubble_duration"
+      ],
+      "obligations": [
+        "network_warning",
+        "network_timeout",
+        "duration_record",
+        "call_audio_mode_released",
+        "returned_to_chat",
+        "no_crash"
+      ],
+      "coverage_level": "partial"
+    }
+  ]
+}

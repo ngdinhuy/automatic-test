@@ -1,0 +1,87 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-026",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 26,
+      "description_cell": "B26",
+      "expected_cell": "C26"
+    },
+    "description": "A và B đang trong cuộc gọi, C gọi cho A/B\n - A/B chấp nhận C",
+    "expected": "A/B vào cuộc gọi với C , và kết thúc cuộc gọi của B-A",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": "requires_third_android_account_and_device",
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-026-THREE_DEVICES_A",
+      "CALL-026-THREE_DEVICES_B"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-026-THREE_DEVICES_A",
+      "name": "Ba máy: third_accept, C gọi A",
+      "roles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-026"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: lab:member_names",
+      "params": {
+        "flow": "third_call",
+        "variant": "third_accept",
+        "target": "A"
+      },
+      "requirements": [
+        "lab:member_names"
+      ],
+      "obligations": [
+        "third_call_policy",
+        "original_call_policy",
+        "new_call_policy"
+      ],
+      "coverage_level": "functional"
+    },
+    {
+      "id": "CALL-026-THREE_DEVICES_B",
+      "name": "Ba máy: third_accept, C gọi B",
+      "roles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-026"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: lab:member_names",
+      "params": {
+        "flow": "third_call",
+        "variant": "third_accept",
+        "target": "B"
+      },
+      "requirements": [
+        "lab:member_names"
+      ],
+      "obligations": [
+        "third_call_policy",
+        "original_call_policy",
+        "new_call_policy"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

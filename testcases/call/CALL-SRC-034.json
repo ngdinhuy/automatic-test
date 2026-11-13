@@ -1,0 +1,55 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-034",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 34,
+      "description_cell": "B34",
+      "expected_cell": "C34"
+    },
+    "description": "gọi khi máy người nhận để sleep trên 5 phút",
+    "expected": "máy người nhận vẫn nhận được cuộc gọi bình thường",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-034-SLEEP"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-034-SLEEP",
+      "name": "B sleep trên 5 phút vẫn nhận gọi",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-034"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "call",
+        "variant": "sleep",
+        "sleep_seconds": 330
+      },
+      "requirements": [],
+      "obligations": [
+        "slept_over_5_minutes",
+        "incoming",
+        "both_connected"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

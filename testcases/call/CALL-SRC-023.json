@@ -1,0 +1,58 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-023",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 23,
+      "description_cell": "B23",
+      "expected_cell": "C23"
+    },
+    "description": "A gọi cho B (B có noti và chưa nghe). C gọi cho B",
+    "expected": "C hiển thị thông báo: \"Người nhận đang bận\", A vẫn duy trì kết nối cuộc gọi đến B",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": "requires_third_android_account_and_device",
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-023-THREE_DEVICES_B"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-023-THREE_DEVICES_B",
+      "name": "Ba máy: busy_ringing, C gọi B",
+      "roles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-023"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: lab:member_names",
+      "params": {
+        "flow": "third_call",
+        "variant": "busy_ringing",
+        "target": "B"
+      },
+      "requirements": [
+        "lab:member_names"
+      ],
+      "obligations": [
+        "third_call_policy",
+        "original_call_policy",
+        "new_call_policy"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

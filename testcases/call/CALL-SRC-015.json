@@ -1,0 +1,157 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-015",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 15,
+      "description_cell": "B15",
+      "expected_cell": "C15"
+    },
+    "description": "Gọi audio 1–1 các case : \n -khi app đang inapp\n -khi app background\n -khi app bị kill\n -khi màn hình khoá",
+    "expected": "nghe nhận bình thường ở noti, màn hình khóa, incoming\n -Hai bên nghe được âm thanh rõ ràng\n -Âm thanh 2 chiều không bị delay bất thường\n -Bật/tắt micro trong cuộc gọi\n -Trạng thái mute hiển thị đúng cho người dùng\n -Chuyển loa ngoài / loa trong\n -Sử dụng tai nghe có dây\n -Sử dụng tai nghe Bluetooth\n -Cắm tai nghe khi đang trong cuộc gọi\n -Rút tai nghe khi đang trong cuộc gọi\n -Điều chỉnh âm lượng cuộc gọi",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-015-INAPP",
+      "CALL-015-BACKGROUND",
+      "CALL-015-KILLED",
+      "CALL-015-LOCKED"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-015-INAPP",
+      "name": "Audio đến khi B inapp, mic/loa/tai nghe",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-015"
+      ],
+      "note": "Kiểm tra tín hiệu thoại của Android theo UID trên A/B, chưa đo nội dung, chất lượng âm hoặc độ trễ.",
+      "params": {
+        "flow": "call",
+        "variant": "audio_controls",
+        "state": "inapp"
+      },
+      "requirements": [
+        "probe:audio_duplex",
+        "probe:audio_routes"
+      ],
+      "obligations": [
+        "both_connected",
+        "call_audio_signals",
+        "mic_toggle",
+        "route_switch",
+        "wired_bluetooth_hotplug",
+        "volume_change"
+      ],
+      "coverage_level": "partial"
+    },
+    {
+      "id": "CALL-015-BACKGROUND",
+      "name": "Audio đến khi B background, mic/loa/tai nghe",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-015"
+      ],
+      "note": "Kiểm tra tín hiệu thoại của Android theo UID trên A/B, chưa đo nội dung, chất lượng âm hoặc độ trễ.",
+      "params": {
+        "flow": "call",
+        "variant": "audio_controls",
+        "state": "background"
+      },
+      "requirements": [
+        "probe:audio_duplex",
+        "probe:audio_routes"
+      ],
+      "obligations": [
+        "both_connected",
+        "call_audio_signals",
+        "mic_toggle",
+        "route_switch",
+        "wired_bluetooth_hotplug",
+        "volume_change"
+      ],
+      "coverage_level": "partial"
+    },
+    {
+      "id": "CALL-015-KILLED",
+      "name": "Audio đến khi B killed, mic/loa/tai nghe",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-015"
+      ],
+      "note": "Kiểm tra tín hiệu thoại của Android theo UID trên A/B, chưa đo nội dung, chất lượng âm hoặc độ trễ.",
+      "params": {
+        "flow": "call",
+        "variant": "audio_controls",
+        "state": "killed"
+      },
+      "requirements": [
+        "probe:audio_duplex",
+        "probe:audio_routes"
+      ],
+      "obligations": [
+        "both_connected",
+        "call_audio_signals",
+        "mic_toggle",
+        "route_switch",
+        "wired_bluetooth_hotplug",
+        "volume_change"
+      ],
+      "coverage_level": "partial"
+    },
+    {
+      "id": "CALL-015-LOCKED",
+      "name": "Audio đến khi B locked, mic/loa/tai nghe",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-015"
+      ],
+      "note": "Kiểm tra tín hiệu thoại của Android theo UID trên A/B, chưa đo nội dung, chất lượng âm hoặc độ trễ.",
+      "params": {
+        "flow": "call",
+        "variant": "audio_controls",
+        "state": "locked"
+      },
+      "requirements": [
+        "probe:audio_duplex",
+        "probe:audio_routes"
+      ],
+      "obligations": [
+        "both_connected",
+        "call_audio_signals",
+        "mic_toggle",
+        "route_switch",
+        "wired_bluetooth_hotplug",
+        "volume_change"
+      ],
+      "coverage_level": "partial"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-031",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 31,
+      "description_cell": "B31",
+      "expected_cell": "C31"
+    },
+    "description": "Nghe nhạc/ xem video khi đang call",
+    "expected": "Nhạc bị pause, hoặc giảm âm lượng, audio gọi được ưu tiên",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-031-AUDIO_FOCUS"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-031-AUDIO_FOCUS",
+      "name": "Nhạc/video nhường audio focus cho Call",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-031"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: probe:media_audio_focus",
+      "params": {
+        "flow": "call",
+        "variant": "media_focus"
+      },
+      "requirements": [
+        "probe:media_audio_focus"
+      ],
+      "obligations": [
+        "media_playing_before",
+        "media_paused_or_ducked",
+        "call_audio_priority"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

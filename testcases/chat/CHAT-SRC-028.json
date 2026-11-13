@@ -1,0 +1,54 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-028",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 28,
+      "description_cell": "A28",
+      "expected_cell": "B28"
+    },
+    "description": "Check trạng thái đang typing",
+    "expected": "khi ai đó đang typing thì hội thoại phải hiển thị icon và trạng thái đang typing của người đang typing",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-028-FUNCTIONAL"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-028-FUNCTIONAL",
+      "name": "Typing xuất hiện rồi biến mất",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-028"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "typing"
+      },
+      "requirements": [
+        "locator:typing"
+      ],
+      "obligations": [
+        "typing_visible",
+        "typing_cleared"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

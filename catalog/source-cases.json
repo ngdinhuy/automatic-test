@@ -1,0 +1,2111 @@
+{
+  "schema_version": 3,
+  "created_on": "2026-11-11",
+  "updated_on": "2026-11-11",
+  "source_file": "sources/common-tc-call-chat.xlsx",
+  "source_sha256": "5f1fe22d5aba12cc61a34a667b4008623740997dd2134a9ae6b6695784103cc6",
+  "scope": "Desktop và script Appium chạy chức năng Android–Android; chuyển iOS–Android sang Android–Android. Loại iOS-only và viễn thông; không kiểm tra pixel/font/layout.",
+  "id_policy": "IDs assigned once during initial import; preserve on later reconciliation even if source row moves.",
+  "counts": {
+    "Chat": 36,
+    "Call": 40
+  },
+  "total": 76,
+  "excluded_scenario_count": 3,
+  "candidate_group_count": 73,
+  "excluded_rows": [
+    {
+      "sheet": "Call",
+      "row": 2,
+      "reason": "section_heading",
+      "text": "Testcase thông báo & chuông"
+    },
+    {
+      "sheet": "Call",
+      "row": 14,
+      "reason": "section_heading",
+      "text": "Testcase khởi tạo, thiết lập cuộc gọi, hủy cuộc gọi"
+    }
+  ],
+  "cases": [
+    {
+      "source_id": "CHAT-SRC-002",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 2,
+        "description_cell": "A2",
+        "expected_cell": "B2"
+      },
+      "description": "vào app, vào hội thoại cho hệ thống load tin nhắn lên local, xong tắt mạng đi vào lại hội thoại vẫn phải còn tin nhắn cũ ",
+      "expected": "vào app, vào hội thoại cho hệ thống load tin nhắn lên local, xong tắt mạng đi vào lại hội thoại vẫn phải còn tin nhắn cũ ",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-002-CACHE"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-003",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 3,
+        "description_cell": "A3",
+        "expected_cell": "B3"
+      },
+      "description": "Gửi tin nhắn text dài vừa, dài max ký tự, áp dụng view dưới các mức độ kích thước từ mức 0 -> 6",
+      "expected": "Gửi tin nhắn thành công, có hiển thị \"xem thêm\", không bị text đè thời gian gửi, hiển thị đủ text",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "runner_case_ids": [
+        "CHAT-TEXT-PAIR"
+      ],
+      "last_validation_report": "reports/20261111-112308-593893/report.html",
+      "script_variants": [
+        "CHAT-003-MEDIUM",
+        "CHAT-003-MAXIMUM"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-004",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 4,
+        "description_cell": "A4",
+        "expected_cell": "B4"
+      },
+      "description": "Gửi tin nhắn thoại",
+      "expected": "Gửi tin nhắn thành công, nghe lại file ghi âm bình thường, rõ và đầy đủ thông tin",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-004-VOICE"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-005",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 5,
+        "description_cell": "A5",
+        "expected_cell": "B5"
+      },
+      "description": "gửi tin nhắn text kèm mention",
+      "expected": "Hiển thị đúng tên người được mention ( lấy ưu tiên theo danh bạ --> nickname --> SDT)",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-005-MENTION"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-006",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 6,
+        "description_cell": "A6",
+        "expected_cell": "B6"
+      },
+      "description": "gửi tin nhắn hình ảnh, gửi nhiều ảnh, video bằng cách click (+) chọn camera",
+      "expected": "gửi file thành công, view lại bên nhận ảnh nhận video view đúng đủ",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-006-CAMERA_PHOTO",
+        "CHAT-006-CAMERA_VIDEO",
+        "CHAT-006-MULTIPLE_IMAGES"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-007",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 7,
+        "description_cell": "A7",
+        "expected_cell": "B7"
+      },
+      "description": "gửi file tệp dung lượng lớn ( sau khi nén <100Mb), tiêu chuẩn, HD, ảnh gốc",
+      "expected": "xử lý nén file gửi thành công",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-007-STANDARD",
+        "CHAT-007-HD",
+        "CHAT-007-ORIGINAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-008",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 8,
+        "description_cell": "A8",
+        "expected_cell": "B8"
+      },
+      "description": "gửi file video tệp dung lượng lớn ( sau khi nén > 1000Mb), ảnh >20Mb",
+      "expected": "Báo lỗi file vượt quá dung lượng",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-008-VIDEO_OVER_1000MB",
+        "CHAT-008-IMAGE_OVER_20MB"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-009",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 9,
+        "description_cell": "A9",
+        "expected_cell": "B9"
+      },
+      "description": "Reply tin nhắn có mention",
+      "expected": "Reply tin nhắn thành công, hiển thị đúng tên người được mention ( lấy ưu tiên theo danh bạ --> nickname --> SDT)",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-009-REPLY"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-010",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 10,
+        "description_cell": "A10",
+        "expected_cell": "B10"
+      },
+      "description": "chuyển tiếp tin nhắn",
+      "expected": "chuyển tiếp tin nhắn thành công",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-010-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-011",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 11,
+        "description_cell": "A11",
+        "expected_cell": "B11"
+      },
+      "description": "Gửi tin nhắn khi mất mạng",
+      "expected": "báo lỗi không gửi được, click retry lại khi có mạng OK",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-011-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-012",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 12,
+        "description_cell": "A12",
+        "expected_cell": "B12"
+      },
+      "description": "Sửa tin nhắn trên hội thoại",
+      "expected": "sửa tin nhắn thành công, tin nhắn mới được cập nhật lại ngay",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-012-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-013",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 13,
+        "description_cell": "A13",
+        "expected_cell": "B13"
+      },
+      "description": "xóa tin nhắn phía mọi người",
+      "expected": "xóa tin nhắn với mọi người thành công, tin nhắn ko còn hiển thị trên list hội thoại của cả bên gửi và bên nhận",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-013-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-014",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 14,
+        "description_cell": "A14",
+        "expected_cell": "B14"
+      },
+      "description": "Thả emoji, view thông tin người thả emoji, gỡ thả emoji",
+      "expected": "thả thành công, view đúng người, đúng số lượng, ghõ thành công",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-014-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-015",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 15,
+        "description_cell": "A15",
+        "expected_cell": "B15"
+      },
+      "description": "Check tin nhắn nháp, gõ text nhưng chưa gửi đi, back lại màn chatlist , sau đó vào gửi tin nhắn đi và back lại chatlist lần nữa",
+      "expected": "lần 1 khi về chatlist thì thấy có lastmessage là bản nháp\n lần 2. sau khi gửi text thì về lại chatlisth thì lastmessage không hiển thị bản nháp",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "runner_case_ids": [
+        "CHAT-DRAFT"
+      ],
+      "last_validation_report": "reports/20261111-112308-593893/report.html",
+      "script_variants": [
+        "CHAT-015-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-016",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 16,
+        "description_cell": "A16",
+        "expected_cell": "B16"
+      },
+      "description": "Ghim tin nhắn, bỏ ghim tin nhắn",
+      "expected": "Ghim tin nhắn, bỏ ghim tin nhắn thành công",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-016-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-017",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 17,
+        "description_cell": "A17",
+        "expected_cell": "B17"
+      },
+      "description": "Tìm kiếm tin nhắn trong hội thoại",
+      "expected": "Tìm kiếm thành công, highlight text nhập tìm kiếm trong hội thoại",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-017-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-018",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 18,
+        "description_cell": "A18",
+        "expected_cell": "B18"
+      },
+      "description": "Check last message ngoài màn danh sách hội thoại",
+      "expected": "hiển thị đúng đầy đủ last message khi có tin nhắn mới đến",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-018-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-019",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 19,
+        "description_cell": "A19",
+        "expected_cell": "B19"
+      },
+      "description": "Check hội thoại được ghim gần nhất",
+      "expected": "Hội thoại được ghim gần nhất luôn ở đầu danh sách hội thoại",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-019-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-020",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 20,
+        "description_cell": "A20",
+        "expected_cell": "B20"
+      },
+      "description": "Check noti tin nhắn đến khi kill app, màn hình khóa",
+      "expected": "có push noti về máy, có rung và có chuông",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-020-KILLED_LOCKED"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-021",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 21,
+        "description_cell": "A21",
+        "expected_cell": "B21"
+      },
+      "description": "Check noti tin nhắn đến khi kill app, màn hình không khóa",
+      "expected": "có push noti về máy, có rung và có chuông",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-021-KILLED"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-022",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 22,
+        "description_cell": "A22",
+        "expected_cell": "B22"
+      },
+      "description": "Check noti khi app ở background",
+      "expected": "có push noti về máy, có rung và có chuông",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-022-BACKGROUND"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-023",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 23,
+        "description_cell": "A23",
+        "expected_cell": "B23"
+      },
+      "description": "check noti in app",
+      "expected": "nếu đang ở hội thoại A, mà tin nhắn đến là của hội thoại B thì phải có noti inapp\n nếu đang ở hội thoại A mà tin nhắn đến của chính hội thoại A thì không được bắn noti in app",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-023-SAME_CONVERSATION",
+        "CHAT-023-OTHER_CONVERSATION"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-024",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 24,
+        "description_cell": "A24",
+        "expected_cell": "B24"
+      },
+      "description": "Tạo bình chọn",
+      "expected": "Tạo bình chọn thành công",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-024-POLL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-025",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 25,
+        "description_cell": "A25",
+        "expected_cell": "B25"
+      },
+      "description": "Check remove thông báo đẩy ở trung tâm thông báo sau khi đọc tin nhắn",
+      "expected": "click vào noti tin nhắn để vào hội thoại thì phải remove thông báo đẩy ở bên ngoài trung tâm thông báo",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-025-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-026",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 26,
+        "description_cell": "A26",
+        "expected_cell": "B26"
+      },
+      "description": "Check thông báo số lượng tin nhắn chưa đọc ở từng hội thoại, ở badge, ở ngoài app",
+      "expected": "số lượng tin nhắn chưa đọc phải hiện thị đúng ( với các máy có hỗ trợ)",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-026-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-027",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 27,
+        "description_cell": "A27",
+        "expected_cell": "B27"
+      },
+      "description": "Check noti khi màn hình sleep lâu",
+      "expected": "có push noti về máy, có rung và có chuông",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-027-SLEEP"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-028",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 28,
+        "description_cell": "A28",
+        "expected_cell": "B28"
+      },
+      "description": "Check trạng thái đang typing",
+      "expected": "khi ai đó đang typing thì hội thoại phải hiển thị icon và trạng thái đang typing của người đang typing",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-028-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-029",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 29,
+        "description_cell": "A29",
+        "expected_cell": "B29"
+      },
+      "description": "check hiển thị thông báo \"X tin nhắn chưa đọc\" khi click vào từ noti tin nhắn mới",
+      "expected": "Click từ noti vào phải vào được đúng hội thoại chat, hiển thị đúng đủ số lượng tin nhắn chưa đọc và không được mất đi ngay",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-029-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-030",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 30,
+        "description_cell": "A30",
+        "expected_cell": "B30"
+      },
+      "description": "Sử dụng camera trên app để chụp ảnh và gửi ",
+      "expected": "Có thể gửi ngay và Tự động lưu về máy ",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-030-CAMERA"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-031",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 31,
+        "description_cell": "A31",
+        "expected_cell": "B31"
+      },
+      "description": "vào hôi thoại cá nhân, hội thoại nhóm thực hiện chia sẻ định vị vị trí hiện tại, chia sẻ hành trình trực tiếp ",
+      "expected": "chia sẻ thành công",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-031-PEER_CURRENT",
+        "CHAT-031-PEER_LIVE",
+        "CHAT-031-GROUP_CURRENT",
+        "CHAT-031-GROUP_LIVE"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-032",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 32,
+        "description_cell": "A32",
+        "expected_cell": "B32"
+      },
+      "description": "Check ricktexxt, markdown ",
+      "expected": "kết quả giống như app telegram",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": "ui_visual_only",
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-032-RICH_TEXT"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-033",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 33,
+        "description_cell": "A33",
+        "expected_cell": "B33"
+      },
+      "description": "Test thêm profile cá nhân , profile nhóm (tìm tin nhắn, ghim trò chuyện, tắt thông báo, ảnh...)",
+      "expected": null,
+      "source_qualifier": null,
+      "spec_issues": [
+        "missing_expected"
+      ],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-033-PEER",
+        "CHAT-033-GROUP"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-034",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 34,
+        "description_cell": "A34",
+        "expected_cell": "B34"
+      },
+      "description": "đang có cuộc gọi whatsapp, vào nhóm chat rồi click (+) để chụp ảnh",
+      "expected": "vẫn chụp được ảnh bình thường không bị treo đơ",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": "requires_external_app_or_special_sim",
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-034-WHATSAPP_CAMERA"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-035",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 35,
+        "description_cell": "A35",
+        "expected_cell": "B35"
+      },
+      "description": "Tạo nhóm, chia sẻ QR nhóm, join nhóm bằng linh/ quét QR, rời nhóm",
+      "expected": "thành công",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-035-LINK",
+        "CHAT-035-QR"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-036",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 36,
+        "description_cell": "A36",
+        "expected_cell": "B36"
+      },
+      "description": "Check @ Tammi trong cả hội thoại nhóm và hội thoại cá nhân",
+      "expected": "Thấy có Tammi và có kết quả trả về bình thường ",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-036-PEER",
+        "CHAT-036-GROUP"
+      ]
+    },
+    {
+      "source_id": "CHAT-SRC-037",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Chat",
+        "row": 37,
+        "description_cell": "A37",
+        "expected_cell": "B37"
+      },
+      "description": "dùng thuê bao hết data vẫn call chat meet và click miniapp viettel++ vẫn vào được  ( số sim 0868701860)",
+      "expected": "dùng thuê bao hết data vẫn call chat meet và click miniapp viettel++ vẫn vào được ",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": "requires_external_app_or_special_sim",
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CHAT-037-ZERO_DATA"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-003",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 3,
+        "description_cell": "B3",
+        "expected_cell": "C3"
+      },
+      "description": "Thực hiện cuộc gọi khi máy người nhận không có mạng ",
+      "expected": "Thông báo: Đang nối máy đến người nhận, chuông chờ kết nối",
+      "source_qualifier": "m",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-003-OFFLINE"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-004",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 4,
+        "description_cell": "B4",
+        "expected_cell": "C4"
+      },
+      "description": "thời gian chờ người nhận nghe cuộc gọi",
+      "expected": "Thông báo: Đang đổ chuông, chuông gọi đi",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-004-RINGING"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-005",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 5,
+        "description_cell": "B5",
+        "expected_cell": "C5"
+      },
+      "description": "check gọi đến khi máy người nhận để vibrate mode",
+      "expected": "Máy rung, Màn hình hiển thị cuộc gọi đến",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-005-VIBRATE"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-006",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 6,
+        "description_cell": "B6",
+        "expected_cell": "C6"
+      },
+      "description": "check gọi đến khi máy người nhận để ring mode",
+      "expected": "Đổ chuông báo cuộc gọi đến",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-006-NORMAL"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-007",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 7,
+        "description_cell": "B7",
+        "expected_cell": "C7"
+      },
+      "description": "check gọi đến khi máy người nhận để slient mode",
+      "expected": "không đổ chuông, rung, chỉ có noti bình thường",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-007-SILENT"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-008",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 8,
+        "description_cell": "B8",
+        "expected_cell": "C8"
+      },
+      "description": "Call audio 1-1 , call đi, call đến",
+      "expected": "phải có service thông báo ở trung tâm thông báo  \"Đang trong cuộc gọi..\"",
+      "source_qualifier": "Androi",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-008-SERVICE"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-009",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 9,
+        "description_cell": "B9",
+        "expected_cell": "C9"
+      },
+      "description": "call audio nhóm, call đi, call đến",
+      "expected": "phải có service thông báo ở trung tâm thông báo  \"Đang trong cuộc gọi..\"",
+      "source_qualifier": "Androi",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-009-SERVICE"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-010",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 10,
+        "description_cell": "B10",
+        "expected_cell": "C10"
+      },
+      "description": "Call video 1-1, call đi, call đến",
+      "expected": "phải có service thông báo ở trung tâm thông báo  \"Đang trong cuộc gọi..\"",
+      "source_qualifier": "Androi",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-010-SERVICE"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-011",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 11,
+        "description_cell": "B11",
+        "expected_cell": "C11"
+      },
+      "description": "call video nhóm, call đi, call đến",
+      "expected": "phải có service thông báo ở trung tâm thông báo  \"Đang trong cuộc gọi..\"",
+      "source_qualifier": "Androi",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-011-SERVICE"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-012",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 12,
+        "description_cell": "B12",
+        "expected_cell": "C12"
+      },
+      "description": "A call video cho B, B chưa nghe máy, A mở tab khác , sau đó B nghe máy",
+      "expected": null,
+      "source_qualifier": "Androi",
+      "spec_issues": [
+        "missing_expected"
+      ],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-012-CALLER_BACKGROUND"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-013",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 13,
+        "description_cell": "B13",
+        "expected_cell": "C13"
+      },
+      "description": "A call audio cho B, B chưa nghe máy, A mở tab khác , sau đó B nghe máy",
+      "expected": "phải có service thông báo ở trung tâm thông báo  \"Đang trong cuộc gọi..\"",
+      "source_qualifier": "Androi",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-013-CALLER_BACKGROUND"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-015",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 15,
+        "description_cell": "B15",
+        "expected_cell": "C15"
+      },
+      "description": "Gọi audio 1–1 các case : \n -khi app đang inapp\n -khi app background\n -khi app bị kill\n -khi màn hình khoá",
+      "expected": "nghe nhận bình thường ở noti, màn hình khóa, incoming\n -Hai bên nghe được âm thanh rõ ràng\n -Âm thanh 2 chiều không bị delay bất thường\n -Bật/tắt micro trong cuộc gọi\n -Trạng thái mute hiển thị đúng cho người dùng\n -Chuyển loa ngoài / loa trong\n -Sử dụng tai nghe có dây\n -Sử dụng tai nghe Bluetooth\n -Cắm tai nghe khi đang trong cuộc gọi\n -Rút tai nghe khi đang trong cuộc gọi\n -Điều chỉnh âm lượng cuộc gọi",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-015-INAPP",
+        "CALL-015-BACKGROUND",
+        "CALL-015-KILLED",
+        "CALL-015-LOCKED"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-016",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 16,
+        "description_cell": "B16",
+        "expected_cell": "C16"
+      },
+      "description": "Gọi audio 1–1 khi người nhận đang ko có mạng, sau khi người gọi tắt thì người nhận bật lại mạng",
+      "expected": "máy người nhận show thông báo cuộc gọi nhỡ, không được bắn noti cuộc gọi đến (hoặc có noti cuộc gọi đến nhưng bấm nghe hoặc tắt là phải tắt được luôn)",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-016-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-017",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 17,
+        "description_cell": "B17",
+        "expected_cell": "C17"
+      },
+      "description": "Huỷ ngay sau khi bấm gọi",
+      "expected": "hủy cuộc gọi thành công, người nhận có thông báo cuộc gọi nhỡ",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-017-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-018",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 18,
+        "description_cell": "B18",
+        "expected_cell": "C18"
+      },
+      "description": "Gọi audio liên tiếp nhiều lần trong thời gian ngắn",
+      "expected": "Thực hiện được cuộc gọi bình thường",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-018-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-019",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 19,
+        "description_cell": "B19",
+        "expected_cell": "C19"
+      },
+      "description": "Gọi audio khi app vừa mới mở",
+      "expected": "Thực hiện được cuộc gọi bình thường",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-019-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-020",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 20,
+        "description_cell": "B20",
+        "expected_cell": "C20"
+      },
+      "description": "Bấm gọi lại ngay sau khi người nhận từ chối",
+      "expected": "Thực hiện được cuộc gọi bình thường",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-020-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-021",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 21,
+        "description_cell": "B21",
+        "expected_cell": "C21"
+      },
+      "description": null,
+      "expected": "A call cho B, B Từ chối xong gọi lại luôn cho A",
+      "source_qualifier": "I&A",
+      "spec_issues": [
+        "missing_description"
+      ],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-021-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-022",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 22,
+        "description_cell": "B22",
+        "expected_cell": "C22"
+      },
+      "description": "Cuộc gọi tự kết thúc khi người nhận không phản hồi trong timeout",
+      "expected": "máy người nhận thông báo cuộc gọi nhỡ, máy người gọi thông báo \"Người nhận không liên lạc được\"",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-022-FUNCTIONAL"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-023",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 23,
+        "description_cell": "B23",
+        "expected_cell": "C23"
+      },
+      "description": "A gọi cho B (B có noti và chưa nghe). C gọi cho B",
+      "expected": "C hiển thị thông báo: \"Người nhận đang bận\", A vẫn duy trì kết nối cuộc gọi đến B",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": "requires_third_android_account_and_device",
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-023-THREE_DEVICES_B"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-024",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 24,
+        "description_cell": "B24",
+        "expected_cell": "C24"
+      },
+      "description": "A gọi cho B (B có noti và chưa nghe). C gọi cho B thì C bị báo bận, B nghe của A",
+      "expected": "C hiển thị thông báo: \"Người nhận đang bận\", A vẫn duy trì kết nối cuộc gọi đến B, B nghe của A bình thường",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": "requires_third_android_account_and_device",
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-024-THREE_DEVICES_B"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-025",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 25,
+        "description_cell": "B25",
+        "expected_cell": "C25"
+      },
+      "description": "A và B đang trong cuộc gọi, C gọi cho A/B\n - A/B từ chối C",
+      "expected": "A/B sẽ hiển thị màn hình cuộc gọi thứ ba đến để có thể từ chối C hoặc trả lời C\n trên màn hình của C hiển thị thông báo: \"Người nhận đã từ chối cuộc gọi\", và C bị kết thúc cuộc gọi",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": "requires_third_android_account_and_device",
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-025-THREE_DEVICES_A",
+        "CALL-025-THREE_DEVICES_B"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-026",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 26,
+        "description_cell": "B26",
+        "expected_cell": "C26"
+      },
+      "description": "A và B đang trong cuộc gọi, C gọi cho A/B\n - A/B chấp nhận C",
+      "expected": "A/B vào cuộc gọi với C , và kết thúc cuộc gọi của B-A",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": "requires_third_android_account_and_device",
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-026-THREE_DEVICES_A",
+        "CALL-026-THREE_DEVICES_B"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-027",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 27,
+        "description_cell": "B27",
+        "expected_cell": "C27"
+      },
+      "description": "Từ chối cuộc gọi audio/video khi \n - app ở background\n - màn hình khóa\n - in app\n - kill app",
+      "expected": "Cuộc gọi kết thúc ngay, người gọi nhận thông báo \" Người nhận từ chối cuộc gọi\"",
+      "source_qualifier": "x",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-027-INAPP_AUDIO",
+        "CALL-027-INAPP_VIDEO",
+        "CALL-027-BACKGROUND_AUDIO",
+        "CALL-027-BACKGROUND_VIDEO",
+        "CALL-027-LOCKED_AUDIO",
+        "CALL-027-LOCKED_VIDEO",
+        "CALL-027-KILLED_AUDIO",
+        "CALL-027-KILLED_VIDEO"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-028",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 28,
+        "description_cell": "B28",
+        "expected_cell": "C28"
+      },
+      "description": "Đang trong cuộc gọi thì một bên mất mạng",
+      "expected": "trên máy người còn lại hiển thị thông báo \" Kết nối mạng của người nhận không ổn định\" hiển thị vòng tròn load 30s không kết nối lại được thì kết thúc cuộc gọi\n -Hiển thị trạng thái call ended đúng\n -Thời gian cuộc gọi được ghi nhận chính xác\n -Không còn luồng audio sau khi kết thúc\n -Quay lại đúng màn hình trước khi gọi\n -Không crash khi kết thúc cuộc gọi",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-028-NETWORK_LOSS"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-029",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 29,
+        "description_cell": "B29",
+        "expected_cell": "C29"
+      },
+      "description": "Kill app khi cuộc gọi đang diễn ra",
+      "expected": "Androi: Cuộc gọi vẫn diễn ra, hai bên vẫn nghe gọi bình thường\nIOS: kết thúc cuộc gọi,  -Hiển thị trạng thái call ended đúng\n -Thời gian cuộc gọi được ghi nhận chính xác\n -Không còn luồng audio sau khi kết thúc\n -Quay lại đúng màn hình trước khi gọi\n -Không crash khi kết thúc cuộc gọi",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-029-RECENTS_DISMISS"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-030",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 30,
+        "description_cell": "B30",
+        "expected_cell": "C30"
+      },
+      "description": "Testcase đa nhiệm: \n 1. đang trong cuộc gọi audio\n 2. nhấn home đưa app xuống background\n 3. mở các app khác như zalo, whatsapp..\n 4. mở lại app từ PIP\n 5. Khóa màn hình khi đang gọi( chỉ dùng với Androi)\n 6. Mở khóa lại khi đang gọi",
+      "expected": "Cuộc gọi vẫn duy trì\n âm thanh vẫn nghe được, ko bị disconnect\n trạng thái cuộc gọi vẫn active\n UI hiển thị đúng trạng thái đang call",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-030-MULTITASK"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-031",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 31,
+        "description_cell": "B31",
+        "expected_cell": "C31"
+      },
+      "description": "Nghe nhạc/ xem video khi đang call",
+      "expected": "Nhạc bị pause, hoặc giảm âm lượng, audio gọi được ưu tiên",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-031-AUDIO_FOCUS"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-032",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 32,
+        "description_cell": "B32",
+        "expected_cell": "C32"
+      },
+      "description": "click gọi lại từ bong bóng cuộc gọi nhỡ/ cuộc gọi thoại",
+      "expected": "make cuộc gọi thành công, nghe gọi bình thường",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-032-BUBBLE"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-033",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 33,
+        "description_cell": "B33",
+        "expected_cell": "C33"
+      },
+      "description": "Click gọi lại từ log cuộc gọi ở màn thông báo trong trung tâm thông báo",
+      "expected": "make cuộc gọi thành công, nghe gọi bình thường",
+      "source_qualifier": "IOS",
+      "spec_issues": [],
+      "implementation_status": "excluded",
+      "normalization_status": "pending_functional_split",
+      "automation_mode": "unclassified",
+      "platform_scope": "excluded",
+      "exclusion_reason": "ios_only",
+      "first_phase_defer_reason": null,
+      "execution_status": "excluded",
+      "coverage_note": "Functional assertions only; preserve raw source and defer visual/physical assertions. No product test has run."
+    },
+    {
+      "source_id": "CALL-SRC-034",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 34,
+        "description_cell": "B34",
+        "expected_cell": "C34"
+      },
+      "description": "gọi khi máy người nhận để sleep trên 5 phút",
+      "expected": "máy người nhận vẫn nhận được cuộc gọi bình thường",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-034-SLEEP"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-035",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 35,
+        "description_cell": "B35",
+        "expected_cell": "C35"
+      },
+      "description": "Tạo meet, join meet , rời nhóm, end meet, share màn hình",
+      "expected": "Tạo meet, join meet , rời nhóm, end meet, share màn hình thành công trên cả mobile và web. Cam , mic tắt bật hiện thị đúng trạng thái và show icon đúng trên từng khung hình của member. \n View danh sách member hiển thị tên đúng theo rule: danh bạ --> nickname --> số điện thoại",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-035-MEETING"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-036",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 36,
+        "description_cell": "B36",
+        "expected_cell": "C36"
+      },
+      "description": "IOS call cho Andr, andr từ chối và gọi lại ngay cho ios",
+      "expected": "cuộc gọi 1 kết thúc thành công, cuộc gọi 2 nghe gọi bình thường",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "execution_adaptation": {
+        "platform": "Android-Android",
+        "initial_caller_role": "A",
+        "initial_receiver_role": "B",
+        "description": "Android A gọi Android B; B từ chối rồi gọi lại ngay cho A; A nhận cuộc gọi mới.",
+        "steps": [
+          "A gọi B",
+          "B từ chối cuộc gọi đầu",
+          "B gọi lại ngay cho A, không chèn thời gian chờ cố định để né lỗi",
+          "A nhận cuộc gọi mới",
+          "Kết thúc cuộc gọi mới và kiểm tra trạng thái cuối trên cả hai máy"
+        ],
+        "functional_assertions": [
+          "Cuộc gọi đầu kết thúc trên cả hai máy",
+          "Cuộc gọi ngược chiều được thiết lập, đúng tài khoản gọi và nhận",
+          "Hai phía chuyển sang trạng thái active của cuộc gọi mới",
+          "Kết thúc cuộc gọi mới thành công trên cả hai máy"
+        ],
+        "deferred_assertions": [
+          "Chất lượng và âm thanh hai chiều cần phép đo hoặc xác nhận riêng"
+        ],
+        "implementation_status": "not_implemented"
+      },
+      "runner_case_ids": [
+        "CALL-RECALL-A"
+      ],
+      "last_validation_report": "reports/20261111-112308-593893/report.html",
+      "script_variants": [
+        "CALL-036-ANDROID_ANDROID"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-037",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 37,
+        "description_cell": "B37",
+        "expected_cell": "C37"
+      },
+      "description": "andr call cho ios, ios từ chối và gọi lại ngay cho andr",
+      "expected": "cuộc gọi 1 kết thúc thành công, cuộc gọi 2 nghe gọi bình thường",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "execution_adaptation": {
+        "platform": "Android-Android",
+        "initial_caller_role": "B",
+        "initial_receiver_role": "A",
+        "description": "Android B gọi Android A; A từ chối rồi gọi lại ngay cho B; B nhận cuộc gọi mới.",
+        "steps": [
+          "B gọi A",
+          "A từ chối cuộc gọi đầu",
+          "A gọi lại ngay cho B, không chèn thời gian chờ cố định để né lỗi",
+          "B nhận cuộc gọi mới",
+          "Kết thúc cuộc gọi mới và kiểm tra trạng thái cuối trên cả hai máy"
+        ],
+        "functional_assertions": [
+          "Cuộc gọi đầu kết thúc trên cả hai máy",
+          "Cuộc gọi ngược chiều được thiết lập, đúng tài khoản gọi và nhận",
+          "Hai phía chuyển sang trạng thái active của cuộc gọi mới",
+          "Kết thúc cuộc gọi mới thành công trên cả hai máy"
+        ],
+        "deferred_assertions": [
+          "Chất lượng và âm thanh hai chiều cần phép đo hoặc xác nhận riêng"
+        ],
+        "implementation_status": "not_implemented"
+      },
+      "runner_case_ids": [
+        "CALL-RECALL-B"
+      ],
+      "last_validation_report": "reports/20261111-112308-593893/report.html",
+      "script_variants": [
+        "CALL-037-ANDROID_ANDROID"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-038",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 38,
+        "description_cell": "B38",
+        "expected_cell": "C38"
+      },
+      "description": "A và B đang có cuộc gọi tammi, có cuộc gọi viễn thôngC đến cho A, A nghe máy C một lúc xong tắt, quay lại cuộc gọi tammi với B",
+      "expected": "A và B nghe gọi bình thường tiếp",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "excluded",
+      "normalization_status": "pending_functional_split",
+      "automation_mode": "unclassified",
+      "platform_scope": "excluded",
+      "exclusion_reason": "telecom_out_of_scope",
+      "first_phase_defer_reason": null,
+      "execution_status": "excluded",
+      "coverage_note": "Functional assertions only; preserve raw source and defer visual/physical assertions. No product test has run."
+    },
+    {
+      "source_id": "CALL-SRC-039",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 39,
+        "description_cell": "B39",
+        "expected_cell": "C39"
+      },
+      "description": "A và B có cuộc gọi viễn thông, C gọi từ tammi đến cho A, A chọn giữ và nhận , nghe tammi với C xong tắt",
+      "expected": "A và B lại nghe gọi bình thường tiếp",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "excluded",
+      "normalization_status": "pending_functional_split",
+      "automation_mode": "unclassified",
+      "platform_scope": "excluded",
+      "exclusion_reason": "telecom_out_of_scope",
+      "first_phase_defer_reason": null,
+      "execution_status": "excluded",
+      "coverage_note": "Functional assertions only; preserve raw source and defer visual/physical assertions. No product test has run."
+    },
+    {
+      "source_id": "CALL-SRC-040",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 40,
+        "description_cell": "B40",
+        "expected_cell": "C40"
+      },
+      "description": "Thực hiện A gọi videocall cho B, tắt cam hoặc không tắt cam, để thời gian trên 15p ",
+      "expected": "màn hình cả hai không được tự động sleep",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-040-CAMERA_ON",
+        "CALL-040-CAMERA_OFF"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-041",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 41,
+        "description_cell": "B41",
+        "expected_cell": "C41"
+      },
+      "description": "Thực hiện A gọi tạo meet với B, tắt cam hoặc không tắt cam, để thời gian trên 15p ",
+      "expected": "màn hình cả hai không được tự động sleep",
+      "source_qualifier": "I&A",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-041-CAMERA_ON",
+        "CALL-041-CAMERA_OFF"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-042",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 42,
+        "description_cell": "B42",
+        "expected_cell": "C42"
+      },
+      "description": "Thực hiện A gọi video call cho B",
+      "expected": "A và B nghe gọi bình thường, nhìn rõ mặt 2 bên",
+      "source_qualifier": null,
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-042-VIDEO_MEDIA"
+      ]
+    },
+    {
+      "source_id": "CALL-SRC-043",
+      "source": {
+        "file": "sources/common-tc-call-chat.xlsx",
+        "sheet": "Call",
+        "row": 43,
+        "description_cell": "B43",
+        "expected_cell": "C43"
+      },
+      "description": "máy androi A đang gọi đi cho B, B chưa nghe máy thì A về nền mở app khác, sau đó B tắt máy ",
+      "expected": "A sẽ tắt service , và A có thể make cuộc gọi khác thành công ngay sau đó mà không bị lỗi ",
+      "source_qualifier": "androi",
+      "spec_issues": [],
+      "implementation_status": "script_defined_with_prerequisites",
+      "normalization_status": "functional_variants_defined",
+      "automation_mode": "appium_script",
+      "platform_scope": "android_android_functional_candidates",
+      "exclusion_reason": null,
+      "first_phase_defer_reason": null,
+      "execution_status": "see_run_reports",
+      "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+      "script_variants": [
+        "CALL-043-BACKGROUND_REJECT_RETRY"
+      ]
+    }
+  ],
+  "runner_case_mappings": [
+    {
+      "id": "APP-OPEN",
+      "name": "Mở đúng app staging",
+      "roles": [
+        "A"
+      ],
+      "action": "launch",
+      "sources": [],
+      "note": "Kiểm tra setup, không tính coverage testcase nghiệp vụ."
+    },
+    {
+      "id": "AUTH-LOGIN",
+      "name": "Đăng nhập OTP, xác minh máy A",
+      "roles": [
+        "A"
+      ],
+      "action": "login",
+      "sources": [],
+      "note": "Chuyển sang tài khoản staging đã cấu hình nếu cần, không xóa dữ liệu app."
+    },
+    {
+      "id": "AUTH-LOGIN-B",
+      "name": "Đăng nhập OTP, xác minh máy B",
+      "roles": [
+        "B"
+      ],
+      "action": "login_b",
+      "sources": [],
+      "note": "Chuẩn bị tài khoản B độc lập với máy A."
+    },
+    {
+      "id": "CHAT-OPEN-PEER",
+      "name": "Tìm và mở hội thoại tài khoản B",
+      "roles": [
+        "A"
+      ],
+      "action": "open_peer",
+      "sources": [],
+      "note": "Không gửi tin; cần B là tài khoản Tammi hợp lệ."
+    },
+    {
+      "id": "CHAT-DRAFT",
+      "name": "Lưu và khôi phục tin nháp",
+      "roles": [
+        "A"
+      ],
+      "action": "draft",
+      "sources": [
+        "CHAT-SRC-015"
+      ],
+      "note": "Bao phủ phần lưu/khôi phục draft; chưa kiểm tra gửi tin làm hết draft."
+    },
+    {
+      "id": "CHAT-TEXT-PAIR",
+      "name": "Gửi text hai chiều A ↔ B",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "text_pair",
+      "sources": [
+        "CHAT-SRC-003"
+      ],
+      "note": "Text thường, assert bên nhận; chưa bao phủ max ký tự và font scale."
+    },
+    {
+      "id": "CALL-RECALL-A",
+      "name": "A gọi B, B từ chối rồi gọi lại A",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "recall_a",
+      "sources": [
+        "CALL-SRC-036"
+      ],
+      "note": "Cần locator call trong Thiết lập; kiểm tra lifecycle, chưa đo chất lượng âm thanh."
+    },
+    {
+      "id": "CALL-RECALL-B",
+      "name": "B gọi A, A từ chối rồi gọi lại B",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "recall_b",
+      "sources": [
+        "CALL-SRC-037"
+      ],
+      "note": "Cần locator call trong Thiết lập; chuyển từ iOS–Android sang Android–Android."
+    }
+  ]
+}

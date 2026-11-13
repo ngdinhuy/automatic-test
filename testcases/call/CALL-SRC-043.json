@@ -1,0 +1,54 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-043",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 43,
+      "description_cell": "B43",
+      "expected_cell": "C43"
+    },
+    "description": "máy androi A đang gọi đi cho B, B chưa nghe máy thì A về nền mở app khác, sau đó B tắt máy ",
+    "expected": "A sẽ tắt service , và A có thể make cuộc gọi khác thành công ngay sau đó mà không bị lỗi ",
+    "source_qualifier": "androi",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-043-BACKGROUND_REJECT_RETRY"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-043-BACKGROUND_REJECT_RETRY",
+      "name": "A ra nền, B tắt: dọn service và gọi mới",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-043"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "call",
+        "variant": "background_reject_retry"
+      },
+      "requirements": [],
+      "obligations": [
+        "caller_background",
+        "service_removed",
+        "next_call_connected"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

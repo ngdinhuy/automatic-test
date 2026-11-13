@@ -1,0 +1,57 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-022",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 22,
+      "description_cell": "A22",
+      "expected_cell": "B22"
+    },
+    "description": "Check noti khi app ở background",
+    "expected": "có push noti về máy, có rung và có chuông",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-022-BACKGROUND"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-022-BACKGROUND",
+      "name": "Push tin khi background",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-022"
+      ],
+      "note": "Xác minh push, dispatch chuông/rung đúng notification key và mở đúng hội thoại. Chưa đo chuông/rung vật lý.",
+      "params": {
+        "flow": "notification",
+        "state": "background",
+        "sleep_seconds": 0
+      },
+      "requirements": [
+        "probe:notification_alert"
+      ],
+      "obligations": [
+        "notification_payload",
+        "notification_alert_dispatch",
+        "open_correct_conversation"
+      ],
+      "coverage_level": "partial"
+    }
+  ]
+}

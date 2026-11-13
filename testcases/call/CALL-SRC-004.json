@@ -1,0 +1,56 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-004",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 4,
+      "description_cell": "B4",
+      "expected_cell": "C4"
+    },
+    "description": "thời gian chờ người nhận nghe cuộc gọi",
+    "expected": "Thông báo: Đang đổ chuông, chuông gọi đi",
+    "source_qualifier": "I&A",
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-004-RINGING"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-004-RINGING",
+      "name": "A chờ B: trạng thái và chuông gọi đi",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-004"
+      ],
+      "note": "PASS tín hiệu ADB trước–trong–sau theo UID/player; không đo RMS/SNR hay chất lượng âm vật lý. Volume/route thiếu được ghi unavailable.",
+      "params": {
+        "flow": "call",
+        "variant": "ringing"
+      },
+      "requirements": [
+        "probe:ringback"
+      ],
+      "obligations": [
+        "outgoing_ringing",
+        "ringback_signal_started",
+        "ringback_signal_stopped"
+      ],
+      "coverage_level": "partial"
+    }
+  ]
+}

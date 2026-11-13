@@ -1,0 +1,58 @@
+{
+  "source": {
+    "source_id": "CALL-SRC-042",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Call",
+      "row": 42,
+      "description_cell": "B42",
+      "expected_cell": "C42"
+    },
+    "description": "Thực hiện A gọi video call cho B",
+    "expected": "A và B nghe gọi bình thường, nhìn rõ mặt 2 bên",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CALL-042-VIDEO_MEDIA"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CALL-042-VIDEO_MEDIA",
+      "name": "Video 1–1: audio hai chiều và video hai phía",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CALL-SRC-042"
+      ],
+      "note": "Kiểm tra tín hiệu thoại của Android theo UID trên A/B, chưa đo nội dung, chất lượng âm hoặc độ trễ.",
+      "params": {
+        "flow": "call",
+        "variant": "video_media",
+        "kind": "video"
+      },
+      "requirements": [
+        "probe:audio_duplex",
+        "probe:video_duplex"
+      ],
+      "obligations": [
+        "both_connected",
+        "call_audio_signals",
+        "video_frames_both_sides"
+      ],
+      "coverage_level": "partial"
+    }
+  ]
+}

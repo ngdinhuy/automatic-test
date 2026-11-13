@@ -1,0 +1,54 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-014",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 14,
+      "description_cell": "A14",
+      "expected_cell": "B14"
+    },
+    "description": "Thả emoji, view thông tin người thả emoji, gỡ thả emoji",
+    "expected": "thả thành công, view đúng người, đúng số lượng, ghõ thành công",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-014-FUNCTIONAL"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-014-FUNCTIONAL",
+      "name": "Thả, xem người thả và gỡ reaction",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-014"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "reaction"
+      },
+      "requirements": [],
+      "obligations": [
+        "reaction_added",
+        "reactor_identity",
+        "reaction_count",
+        "reaction_removed"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

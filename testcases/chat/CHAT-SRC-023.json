@@ -1,0 +1,79 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-023",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 23,
+      "description_cell": "A23",
+      "expected_cell": "B23"
+    },
+    "description": "check noti in app",
+    "expected": "nếu đang ở hội thoại A, mà tin nhắn đến là của hội thoại B thì phải có noti inapp\n nếu đang ở hội thoại A mà tin nhắn đến của chính hội thoại A thì không được bắn noti in app",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-023-SAME_CONVERSATION",
+      "CHAT-023-OTHER_CONVERSATION"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-023-SAME_CONVERSATION",
+      "name": "Thông báo in-app: same_conversation",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-023"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "inapp_notification",
+        "variant": "same_conversation"
+      },
+      "requirements": [
+        "group:primary"
+      ],
+      "obligations": [
+        "inapp_notification_policy"
+      ],
+      "coverage_level": "functional"
+    },
+    {
+      "id": "CHAT-023-OTHER_CONVERSATION",
+      "name": "Thông báo in-app: other_conversation",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-023"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: group:primary",
+      "params": {
+        "flow": "inapp_notification",
+        "variant": "other_conversation"
+      },
+      "requirements": [
+        "group:primary"
+      ],
+      "obligations": [
+        "inapp_notification_policy"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}

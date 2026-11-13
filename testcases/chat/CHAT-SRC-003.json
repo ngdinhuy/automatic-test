@@ -1,0 +1,98 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-003",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 3,
+      "description_cell": "A3",
+      "expected_cell": "B3"
+    },
+    "description": "Gửi tin nhắn text dài vừa, dài max ký tự, áp dụng view dưới các mức độ kích thước từ mức 0 -> 6",
+    "expected": "Gửi tin nhắn thành công, có hiển thị \"xem thêm\", không bị text đè thời gian gửi, hiển thị đủ text",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "runner_case_ids": [
+      "CHAT-TEXT-PAIR"
+    ],
+    "last_validation_report": "reports/20261111-112308-593893/report.html",
+    "script_variants": [
+      "CHAT-003-MEDIUM",
+      "CHAT-003-MAXIMUM"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-003-MEDIUM",
+      "name": "Text medium, đúng đủ nội dung hai chiều",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-003"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "text",
+        "length": "medium"
+      },
+      "requirements": [],
+      "obligations": [
+        "exact_payload_both_directions"
+      ],
+      "coverage_level": "functional"
+    },
+    {
+      "id": "CHAT-003-MAXIMUM",
+      "name": "Text maximum, đúng đủ nội dung hai chiều",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-003"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: limit:text_max",
+      "params": {
+        "flow": "text",
+        "length": "maximum"
+      },
+      "requirements": [
+        "limit:text_max"
+      ],
+      "obligations": [
+        "exact_payload_both_directions"
+      ],
+      "coverage_level": "functional"
+    },
+    {
+      "id": "CHAT-TEXT-PAIR",
+      "name": "Gửi text hai chiều A ↔ B",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "text_pair",
+      "sources": [
+        "CHAT-SRC-003"
+      ],
+      "note": "Text thường, assert bên nhận; chưa bao phủ max ký tự và font scale.",
+      "params": {},
+      "requirements": [],
+      "obligations": [],
+      "coverage_level": "partial"
+    }
+  ]
+}

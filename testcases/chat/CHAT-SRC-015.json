@@ -1,0 +1,74 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-015",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 15,
+      "description_cell": "A15",
+      "expected_cell": "B15"
+    },
+    "description": "Check tin nhắn nháp, gõ text nhưng chưa gửi đi, back lại màn chatlist , sau đó vào gửi tin nhắn đi và back lại chatlist lần nữa",
+    "expected": "lần 1 khi về chatlist thì thấy có lastmessage là bản nháp\n lần 2. sau khi gửi text thì về lại chatlisth thì lastmessage không hiển thị bản nháp",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "runner_case_ids": [
+      "CHAT-DRAFT"
+    ],
+    "last_validation_report": "reports/20261111-112308-593893/report.html",
+    "script_variants": [
+      "CHAT-015-FUNCTIONAL"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-015-FUNCTIONAL",
+      "name": "Khôi phục nháp, gửi, bỏ trạng thái nháp",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-015"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. ",
+      "params": {
+        "flow": "draft_send"
+      },
+      "requirements": [],
+      "obligations": [
+        "draft_preview",
+        "draft_restored",
+        "sent",
+        "draft_badge_removed"
+      ],
+      "coverage_level": "functional"
+    },
+    {
+      "id": "CHAT-DRAFT",
+      "name": "Lưu và khôi phục tin nháp",
+      "roles": [
+        "A"
+      ],
+      "action": "draft",
+      "sources": [
+        "CHAT-SRC-015"
+      ],
+      "note": "Bao phủ phần lưu/khôi phục draft; chưa kiểm tra gửi tin làm hết draft.",
+      "params": {},
+      "requirements": [],
+      "obligations": [],
+      "coverage_level": "partial"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.tammi.lab.audio">
+  <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="33"/>
+  <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE"/>
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+  <application android:label="Tammi Audio Lab" android:allowBackup="false" android:theme="@android:style/Theme.Material.Light.NoActionBar">
+    <activity android:name=".MainActivity" android:exported="true"/>
+    <service android:name=".AudioService" android:exported="false" android:foregroundServiceType="microphone"/>
+  </application>
+</manifest>

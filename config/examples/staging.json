@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "environment": "staging",
+  "platform": "Android",
+  "app_package": "com.viettel.appviettel.staging",
+  "app_activity": "com.vt.platform.MainActivity",
+  "apk_path": null,
+  "devices": {
+    "A": {
+      "udid": null,
+      "system_port": 8201,
+      "account": {
+        "phone": "",
+        "otp": ""
+      }
+    },
+    "B": {
+      "udid": null,
+      "system_port": 8202,
+      "account": {
+        "phone": "",
+        "otp": ""
+      }
+    },
+    "C": {
+      "udid": null,
+      "system_port": 8203,
+      "account": {
+        "phone": "",
+        "otp": ""
+      }
+    }
+  },
+  "tools": {},
+  "locators": {
+    "call_audio": "//*[@text={peer_name}]/ancestor::*[@clickable=\"true\"][1]/following-sibling::android.widget.Button[1]",
+    "call_accept": "//*[@text=\"Trả lời\" or @content-desc=\"Trả lời\" or @text=\"Chấp nhận\" or @content-desc=\"Chấp nhận\"]",
+    "call_reject": "//*[@text='Từ chối' or @content-desc='Từ chối']",
+    "call_end": "//*[@text='Kết thúc' or @content-desc='Kết thúc']",
+    "call_connected": "//android.widget.TextView[string-length(@text)=5 and substring(@text,3,1)=\":\" and translate(@text,\"0123456789:\",\"\")=\"\" and //*[@content-desc=\"Kết thúc\"]]",
+    "call_video": "//*[@text={peer_name}]/ancestor::*[@clickable=\"true\"][1]/following-sibling::android.widget.Button[2]"
+  },
+  "groups": {},
+  "fixtures": {},
+  "lab": {},
+  "limits": {}
+}

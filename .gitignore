@@ -1,0 +1,16 @@
+config/local/
+reports/
+.runtime/
+.venv/
+node_modules/
+fixtures/
+sources/*.xlsx
+artifacts/
+dist/
+outputs/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.apk
+*.log
+.DS_Store

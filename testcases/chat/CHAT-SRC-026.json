@@ -1,0 +1,56 @@
+{
+  "source": {
+    "source_id": "CHAT-SRC-026",
+    "source": {
+      "file": "sources/common-tc-call-chat.xlsx",
+      "sheet": "Chat",
+      "row": 26,
+      "description_cell": "A26",
+      "expected_cell": "B26"
+    },
+    "description": "Check thông báo số lượng tin nhắn chưa đọc ở từng hội thoại, ở badge, ở ngoài app",
+    "expected": "số lượng tin nhắn chưa đọc phải hiện thị đúng ( với các máy có hỗ trợ)",
+    "source_qualifier": null,
+    "spec_issues": [],
+    "implementation_status": "script_defined_with_prerequisites",
+    "normalization_status": "functional_variants_defined",
+    "automation_mode": "appium_script",
+    "platform_scope": "android_android_functional_candidates",
+    "exclusion_reason": null,
+    "first_phase_defer_reason": null,
+    "execution_status": "see_run_reports",
+    "coverage_note": "Mã hành động/assertion đã có. Chưa nghiệm thu đủ mọi expected/biến thể; kết quả thực tế và điều kiện thiếu nằm trong report từng run. Không test giao diện theo phạm vi người dùng.",
+    "script_variants": [
+      "CHAT-026-FUNCTIONAL"
+    ]
+  },
+  "platform": "Android–Android",
+  "variants": [
+    {
+      "id": "CHAT-026-FUNCTIONAL",
+      "name": "Số unread hội thoại và badge",
+      "roles": [
+        "A",
+        "B"
+      ],
+      "action": "suite",
+      "sources": [
+        "CHAT-SRC-026"
+      ],
+      "note": "Script chức năng. PASS yêu cầu đủ mọi assertion; chưa nghiệm thu trên thiết bị. Điều kiện: probe:launcher_badge",
+      "params": {
+        "flow": "unread"
+      },
+      "requirements": [
+        "probe:launcher_badge",
+        "locator:conversation_unread_count"
+      ],
+      "obligations": [
+        "unread_exact_count",
+        "badge_count",
+        "read_clears_count"
+      ],
+      "coverage_level": "functional"
+    }
+  ]
+}
